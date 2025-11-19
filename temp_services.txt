@@ -1,0 +1,42 @@
+            {[{
+              bg: 'from-blue-400 to-blue-600',
+              icon: 'í³„',
+              title: 'Book Formatting',
+              desc: 'We turn raw manuscripts into polished, professional layouts for print and digital.'
+            },{
+              bg: 'from-purple-400 to-purple-600',
+              icon: 'í¾¨',
+              title: 'Book Cover Design',
+              desc: 'Custom, eye-catching covers that speak to your genre and audience.'
+            },{
+              bg: 'from-green-400 to-green-600',
+              icon: 'í¶¨ï¸',
+              title: 'Book Printing',
+              desc: 'High-quality printing with premium paper and beautiful finish options.'
+            },{
+              bg: 'from-orange-400 to-orange-600',
+              icon: 'í³¢',
+              title: 'Book Marketing',
+              desc: 'Strategic marketing campaigns designed to build your author brand.'
+            },{
+              bg: 'from-red-400 to-red-600',
+              icon: 'í¾§',
+              title: 'Audiobooks',
+              desc: 'Studio-quality recording with professional voice actors and production.'
+            },{
+              bg: 'from-pink-400 to-pink-600',
+              icon: 'âœï¸',
+              title: 'Ghost Writing',
+              desc: 'Experienced writers to craft your manuscript while preserving your voice.'
+            }].map((s, idx) => (
+              <article key={idx} className="relative group overflow-hidden rounded-2xl shadow-md">
+                <div className={`w-full h-56 bg-gradient-to-br ${s.bg} flex items-center justify-center`}>
+                  <span className="text-7xl">{s.icon}</span>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                </div>
+                <div className="p-4 bg-white">
+                  <h4 className="text-lg font-semibold text-gray-900 mb-1">{s.title}</h4>
+                  <p className="text-sm text-gray-600">{s.desc}</p>
+                </div>
+              </article>
+            ))}
