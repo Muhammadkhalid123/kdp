@@ -12,8 +12,45 @@ import TestimonialsSection from './components/Testomonial';
 import Footer from './components/footer';
 
 export default function KindleLandingPage() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Kandle Direct Publishing",
+    "description": "Professional ebook publishing services including formatting, cover design, marketing, and distribution for authors worldwide",
+    "url": "https://kandledirectpublishing.com",
+    "logo": "https://kandledirectpublishing.com/Kandle Direct Publishing-Logo-01.png",
+    "image": "https://kandledirectpublishing.com/og-image.png",
+    "telephone": "+44 7918 934410",
+    "email": "kandledirectpublishing@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "GB"
+    },
+    "priceRange": "$$",
+    "serviceType": [
+      "Ebook Publishing",
+      "Book Formatting",
+      "Cover Design",
+      "Book Marketing",
+      "Ghostwriting",
+      "Audiobook Creation"
+    ],
+    "areaServed": "Worldwide",
+    "sameAs": [
+      "https://facebook.com/kandledirectpublishing",
+      "https://twitter.com/kandlepublish",
+      "https://instagram.com/kandledirectpublishing"
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-black text-white">
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+
       <Header />
 
       {/* Hero Section */}
