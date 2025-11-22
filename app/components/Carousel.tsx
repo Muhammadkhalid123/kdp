@@ -1,31 +1,32 @@
 "use client";
+import Image from 'next/image';
 
 export default function Carousel() {
   // Using the actual brand logos from the image
   const brands = [
-    { 
+    {
       img: "/kobo.png",
       name: "Kobo",
     },
-    { 
-      img: "/ibooks.png", 
+    {
+      img: "/ibooks.png",
       name: "Apple Books",
-      
+
     },
-    { 
-      img: "/cldhachette.png", 
+    {
+      img: "/hachette.png",
       name: "Hachette",
-      
+
     },
-    { 
-      img: "/simon.png", 
+    {
+      img: "/simon.png",
       name: "Simon & Schuster",
-      
+
     },
-    { 
-      img: "/scribd.png", 
+    {
+      img: "/scribd.png",
       name: "Scribd",
-      
+
     },
   ];
 
@@ -40,12 +41,15 @@ export default function Carousel() {
               <div
                 key={`${i}-${index}`}
                 className="mx-4 flex h-12 items-center justify-center px-8"
-                
+
               >
-                <img
+                <Image
                   src={brand.img}
                   alt={brand.name}
+                  width={80}
+                  height={32}
                   className="h-8 w-auto object-contain"
+                  unoptimized
                 />
               </div>
             ))}

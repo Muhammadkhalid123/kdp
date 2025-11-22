@@ -17,6 +17,8 @@ export default function Contact() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -26,14 +28,33 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    setTimeout(() => {
-      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
-      setSubmitted(false);
-    }, 3000);
+    setIsSubmitting(true);
+    setError('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        const data = await response.json();
+        setError(data.error || 'Something went wrong. Please try again.');
+      }
+    } catch (err) {
+      setError('Failed to send message. Please check your connection.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -63,7 +84,7 @@ export default function Contact() {
         {/* Decorative background blobs */}
         <div className="absolute top-0 left-0 w-64 h-64 bg-orange-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 -translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute bottom-0 right-0 w-64 h-64 bg-orange-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 translate-x-1/2 translate-y-1/2"></div>
-        
+
         <div className="relative max-w-6xl mx-auto">
           <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
             <div className="grid md:grid-cols-2 gap-0">
@@ -76,7 +97,7 @@ export default function Contact() {
                   <p className="text-xl sm:text-2xl font-serif text-gray-700 mb-8">
                     We'll Contact You Soon.
                   </p>
-                  
+
                   <form className="space-y-6" onSubmit={handleSubmit}>
                     <div>
                       <input
@@ -89,7 +110,7 @@ export default function Contact() {
                         required
                       />
                     </div>
-                    
+
                     <div>
                       <input
                         type="email"
@@ -101,7 +122,7 @@ export default function Contact() {
                         required
                       />
                     </div>
-                    
+
                     <div>
                       <input
                         type="tel"
@@ -112,7 +133,7 @@ export default function Contact() {
                         className="w-full px-0 py-3 border-0 border-b-2 border-gray-200 focus:border-orange-500 focus:outline-none focus:ring-0 transition-colors placeholder-gray-400 text-gray-900"
                       />
                     </div>
-                    
+
                     <div>
                       <textarea
                         name="message"
@@ -123,36 +144,44 @@ export default function Contact() {
                         rows={3}
                       />
                     </div>
-                    
+
                     {submitted && (
                       <div className="p-4 bg-green-50 border border-green-200 rounded-lg text-green-700">
                         Thank you! We'll contact you soon.
                       </div>
                     )}
-                    
+                    {error && (
+                      <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700">
+                        {error}
+                      </div>
+                    )}
+
                     <button
                       type="submit"
-                      className="mt-8 bg-orange-500 hover:bg-orange-600 text-white font-medium px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center gap-2"
+                      disabled={isSubmitting}
+                      className={`mt-8 bg-orange-500 hover:bg-orange-600 text-white font-medium px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center gap-2 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
                     >
-                      Send Us A Message
-                      <svg 
-                        className="w-5 h-5" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        viewBox="0 0 24 24"
-                      >
-                        <path 
-                          strokeLinecap="round" 
-                          strokeLinejoin="round" 
-                          strokeWidth={2} 
-                          d="M17 8l4 4m0 0l-4 4m4-4H3" 
-                        />
-                      </svg>
+                      {isSubmitting ? 'Sending...' : 'Send Us A Message'}
+                      {!isSubmitting && (
+                        <svg
+                          className="w-5 h-5"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"
+                          />
+                        </svg>
+                      )}
                     </button>
                   </form>
                 </div>
               </div>
-              
+
               {/* Image Section */}
               <div className="relative bg-gradient-to-br from-gray-700 to-gray-900 min-h-[400px] md:min-h-full">
                 <div className="absolute inset-0 flex items-center justify-center p-8">

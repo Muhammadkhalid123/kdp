@@ -1,56 +1,59 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import Logo from './Kandle Direct Publishing-Logo-03.png';
 
 export default function Footer() {
   return (
-  <footer className="bg-gray-900 text-white py-15 md:py-24 px-6 border-t border-gray-800">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-12 mb-16">
-            <div className='p-0 m-0'>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="relative w-[200px] h-[80px] bottom-10 right-7 pb-25">
-                  <Image 
-                    src={Logo} 
-                    alt="Kindle" 
-                    priority
-                    className="object-contain "
-                  />
-                </div>
+    <footer className="bg-gray-900 text-white py-12 md:py-20 lg:py-24 px-4 sm:px-6 border-t border-gray-800">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-12 mb-8 lg:mb-16">
+          {/* Left Column: Logo + Heading + CTA */}
+          <div className="lg:col-span-2 space-y-6 sm:space-y-8">
+            <div className="flex items-center">
+              <div className="relative w-64 sm:w-72 md:w-80 h-24 sm:h-28 md:h-32">
+                <Image
+                  src={Logo}
+                  alt="Kindle"
+                  priority
+                  fill
+                  className="object-contain object-left"
+                />
               </div>
-                <h3 className="text-5xl md:text-7xl font-noto-bold whitespace-nowrap leading-none text-white">
-                From Writing To <br/> Publishing.
-                </h3>
-                <div className="flex items-center gap-110 text-gray-400 mt-20">
-                    <span>Contact Us</span>
-                    <button className="bg-orange-500 hover:bg-white-600 text-white px-4 py-1.5 rounded-full text-sm font-medium transition">
-                        →
-                    </button>
             </div>
-            <div className="w-[540px] relative h-px bg-orange-500">
-                <div className="absolute right-0 top-0 w-50 h-px bg-orange-500 "></div>
-            </div>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="space-y-4 mt-12 ml-90">
-              <ul className="space-y-10"> 
-                <li> <a href="#" className="text-gray-400 hover:text-gray-300 transition whitespace-nowrap"> About </a></li>
-                <li><a href="#" className="text-gray-400 hover:text-gray-300 transition whitespace-nowrap">  Services</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-gray-300 transition whitespace-nowrap">  Why</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-gray-300 transition whitespace-nowrap"> Portfolio</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-gray-300 transition whitespace-nowrap"> Call To Action</a></li>
 
-              </ul>
+            <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-noto-bold leading-tight text-white">
+              From Writing To <br /> Publishing.
+            </h3>
+
+            <div className="flex items-center gap-4 text-gray-400">
+              <span className="text-sm sm:text-base">Contact Us</span>
+              <Link href="/contact" className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-1.5 rounded-full text-sm font-medium transition inline-block">
+                →
+              </Link>
             </div>
+
+            <div className="w-full max-w-xl h-px bg-orange-500"></div>
           </div>
 
-          {/* Right Column: Social + Contact + CTA */}
-          <div className="col-span-2 space-y-8 mt-12 ml-80">
+          {/* Middle Column: Navigation Links */}
+          <div className="space-y-4">
+            <ul className="space-y-3 sm:space-y-4">
+              <li><a href="#" className="text-gray-400 hover:text-gray-300 transition text-sm sm:text-base">About</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-gray-300 transition text-sm sm:text-base">Services</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-gray-300 transition text-sm sm:text-base">Why</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-gray-300 transition text-sm sm:text-base">Portfolio</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-gray-300 transition text-sm sm:text-base">Call To Action</a></li>
+            </ul>
+          </div>
+
+          {/* Right Column: Social + Contact */}
+          <div className="space-y-6 sm:space-y-8">
             {/* Social Icons */}
             <div>
-              <h4 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-8">
+              <h4 className="text-xs sm:text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">
                 Follow Us
               </h4>
-              <div className="flex gap-3">
+              <div className="flex gap-3 flex-wrap">
                 {[
                   { icon: 'instagram', label: 'Instagram' },
                   { icon: 'whatsapp', label: 'WhatsApp' },
@@ -75,30 +78,29 @@ export default function Footer() {
 
             {/* Contact Info */}
             <div>
-              <h4 className="text-sm font-semibold text-gray-400 uppercase tracking-wider p-6 pl-0">
+              <h4 className="text-xs sm:text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">
                 Contact
               </h4>
-              <ul className="space-y-2 text-gray-300">
+              <ul className="space-y-2 text-gray-300 text-sm sm:text-base">
                 <li className="flex items-center gap-2">
                   <span>📞</span>
-                  <span>999-999-9999</span>
+                  <span>+44 7918 934410</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <span>✉️</span>
-                  <span>Kandle@.com</span>
+                  <span>kandledirectpublishing@gmail.com</span>
                 </li>
               </ul>
             </div>
 
             {/* CTA Button */}
-            <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-medium transition flex items-center gap-2">
+            <Link href="/contact" className="bg-orange-500 hover:bg-orange-600 text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-full font-medium transition flex items-center gap-2 text-sm sm:text-base w-full sm:w-auto justify-center">
               Book Your Demo
               <span>→</span>
-            </button>
+            </Link>
           </div>
         </div>
       </div>
-
     </footer>
   );
 }
