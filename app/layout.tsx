@@ -38,6 +38,14 @@ export const metadata: Metadata = {
   authors: [{ name: 'Kandle Direct Publishing' }],
   creator: 'Kandle Direct Publishing',
   publisher: 'Kandle Direct Publishing',
+  manifest: '/manifest.json',
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',

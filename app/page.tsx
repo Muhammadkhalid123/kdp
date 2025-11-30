@@ -8,7 +8,7 @@ import Carousel from './components/Carousel';
 import dynamic from 'next/dynamic';
 const ScrollExperience = dynamic(() => import('./components/ScrollExperience'), { ssr: false });
 import TestimonialsSection from './components/Testomonial';
-
+import CandleAnimation from './components/CandleAnimation';
 import Footer from './components/footer';
 
 export default function KindleLandingPage() {
@@ -68,13 +68,7 @@ export default function KindleLandingPage() {
             Get Started Now
           </Link>
         </div>
-        <div className="w-full md:w-1/2 flex justify-center">
-          <img
-            src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=400&h=600&fit=crop"
-            alt="Candle"
-            className="rounded-2xl sm:rounded-3xl w-full max-w-xs sm:max-w-sm md:w-80 h-72 sm:h-80 md:h-96 object-cover shadow-2xl"
-          />
-        </div>
+        <CandleAnimation />
       </section>
 
       {/* Partners */}
