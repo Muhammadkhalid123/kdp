@@ -55,13 +55,15 @@ export default function Footer() {
               </h4>
               <div className="flex gap-3 flex-wrap">
                 {[
-                  { icon: 'facebook', label: 'Facebook' },
-                  { icon: 'instagram', label: 'Instagram' },
-                  { icon: 'linkedin', label: 'LinkedIn' }
+                  { icon: 'facebook', label: 'Facebook', href: 'https://www.facebook.com/kandledirectpublishing/' },
+                  { icon: 'instagram', label: 'Instagram', href: 'https://www.instagram.com/kandledirectpublishing/' },
+                  { icon: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/company/kandle-direct-publishing/' }
                 ].map((social, i) => (
                   <a
                     key={i}
-                    href="#"
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={social.label}
                     className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 transition"
                   >
@@ -98,6 +100,10 @@ export default function Footer() {
                 <li className="flex items-center gap-2">
                   <span>✉️</span>
                   <span>kandledirectpublishing@gmail.com</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span>📍</span>
+                  <span>173 Dallow Rd, Luton, LU1 1NX, UK</span>
                 </li>
               </ul>
             </div>
