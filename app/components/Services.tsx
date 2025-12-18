@@ -6,76 +6,76 @@ import Footer from './footer';
 import { Book, FileText, TrendingUp, Mic, Edit, Pen } from 'lucide-react';
 import Link from 'next/link';
 
-   
-    export default function Services() {
+
+export default function Services() {
   return (
     <div>
-    <div className="relative min-h-screen w-full overflow-hidden">
-      {/* Background Image (use CSS background to avoid stacking bleed) */}
-      <div
-        className="absolute inset-0 z-0 bg-center bg-cover bg-no-repeat"
-        style={{ backgroundImage: "url('/services/services-hero.png')" }}
-        aria-hidden
-      />
+      <div className="relative min-h-screen w-full overflow-hidden">
+        {/* Background Image (use CSS background to avoid stacking bleed) */}
+        <div
+          className="absolute inset-0 z-0 bg-center bg-cover bg-no-repeat"
+          style={{ backgroundImage: "url('/services/services-hero.png')" }}
+          aria-hidden
+        />
 
-      {/* Header on top of background */}
-      <div className="relative z-30">
-        <Header />
-      </div>
+        {/* Header on top of background */}
+        <div className="relative z-30">
+          <Header />
+        </div>
 
-      {/* Content */}
-      <div className="relative z-20 flex items-center min-h-screen px-6 md:px-12 lg:px-20 pt-10">
-        <div className="max-w-2xl">
-          {/* Heading */}
-          <h1 className="text-5xl lg:text-5xl m-0 font-serif text-white mb-6 leading-tight">
-            Bring Your Book To <br /> Life With Kandle
-          </h1>
+        {/* Content */}
+        <div className="relative z-20 flex items-center min-h-screen px-6 md:px-12 lg:px-20 pt-10">
+          <div className="max-w-2xl">
+            {/* Heading */}
+            <h1 className="text-5xl lg:text-5xl m-0 font-serif text-white mb-6 leading-tight">
+              Bring Your Book To <br /> Life With Kandle
+            </h1>
 
-          {/* Subheading */}
-          <p className="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed">
-            From writing to publishing and beyond — we turn your story into a beautifully produced, professionally marketed book that readers remember.
-          </p>
+            {/* Subheading */}
+            <p className="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed">
+              From writing to publishing and beyond — we turn your story into a beautifully produced, professionally marketed book that readers remember.
+            </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4">
-            <button className="bg-orange-500 hover:bg-orange-600 text-white font-medium px-8 py-3 rounded-full transition-colors duration-200 flex items-center justify-center gap-2">
-              Start Your Book Journey
-              <svg 
-                className="w-5 h-5" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </button>
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <button className="bg-orange-500 hover:bg-orange-600 text-white font-medium px-8 py-3 rounded-full transition-colors duration-200 flex items-center justify-center gap-2">
+                Start Your Book Journey
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
 
-            <button className="bg-white hover:bg-gray-100 text-gray-900 font-medium px-8 py-3 rounded-full transition-colors duration-200 flex items-center justify-center gap-2">
-              Get A Free Consultation
-              <svg 
-                className="w-5 h-5" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </button>
+              <button className="bg-white hover:bg-gray-100 text-gray-900 font-medium px-8 py-3 rounded-full transition-colors duration-200 flex items-center justify-center gap-2">
+                Get A Free Consultation
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </div>
-</div>
-       
+
       {/* Why Choose Us Section (placed just after hero) */}
       <section className="bg-amber-50 text-gray-900 py-20">
         <div className="max-w-7xl mx-auto px-8 md:px-12 grid md:grid-cols-2 gap-8 items-start">
@@ -111,27 +111,27 @@ import Link from 'next/link';
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[{
-              img: '/services/1.jpg',
+              img: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&q=80',
               title: 'Book Formatting',
               desc: 'We turn raw manuscripts into polished, professional layouts for print and digital.'
-            },{
-              img: '/services/2.jpg',
+            }, {
+              img: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?w=800&q=80',
               title: 'Book Cover Design',
               desc: 'Custom, eye-catching covers that speak to your genre and audience.'
-            },{
-              img: '/services/3.jpg',
+            }, {
+              img: 'https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?w=800&q=80',
               title: 'Book Printing',
               desc: 'High-quality printing with premium paper and beautiful finish options.'
-            },{
-              img: '/services/4.jpg',
+            }, {
+              img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
               title: 'Book Marketing',
               desc: 'Strategic marketing campaigns designed to build your author brand.'
-            },{
-              img: '/services/5.jpg',
+            }, {
+              img: 'https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=800&q=80',
               title: 'Audiobooks',
               desc: 'Studio-quality recording with professional voice actors and production.'
-            },{
-              img: '/services/6.jpg',
+            }, {
+              img: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80',
               title: 'Ghost Writing',
               desc: 'Experienced writers to craft your manuscript while preserving your voice.'
             }].map((s, idx) => (
@@ -157,8 +157,8 @@ import Link from 'next/link';
         </div>
       </section>
 
-    
-    <Footer />
+
+      <Footer />
     </div>
   );
 }

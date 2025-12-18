@@ -1,5 +1,8 @@
+"use client";
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
 
 // Import local images
 import img1 from './1.jpg';
@@ -9,22 +12,93 @@ import img4 from './4.jpg';
 import img5 from './5.jpg';
 
 const TestimonialsSection = () => {
+  const testimonials = [
+    {
+      title: "First-Time Author Success",
+      content: "As a debut novelist, I was lost after finishing my manuscript. Kandle's team demystified the entire publishing process. Their guidance on cover design and their marketing checklist were invaluable. My book found its audience, and I retained all my rights—exactly what I wanted.",
+      author: "Elena R.",
+      role: "Fiction Author"
+    },
+    {
+      title: "From Idea to Bestseller",
+      content: "I had a niche non-fiction idea but no time for the technicalities. From professional formatting to distributing my ebook and paperback globally, Kandle handled it all efficiently. Seeing my book rank in its category on Amazon was a dream come true.",
+      author: "David L.",
+      role: "Business & Lifestyle Author"
+    },
+    {
+      title: "Expanding to New Formats",
+      content: "After my ebook's success, I wanted to reach audio listeners. Kandle's audiobook production service was seamless. They matched my book with a perfect narrator and handled all the distribution. It opened up a whole new audience for my work.",
+      author: "Sophie T.",
+      role: "Mystery & Thriller Author"
+    }
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextTestimonial = () => {
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const prevTestimonial = () => {
+    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
   return (
     <section className="bg-gray-800 py-12 md:py-16 lg:py-20 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif mb-8 md:mb-12 text-left">Testimonials</h2>
-        <div className="flex flex-col lg:flex-row items-start gap-8">
-          {/* Left testimonial */}
-          <div className="w-full lg:w-1/2 rounded-2xl relative px-4 sm:px-8 md:px-12">
-            <span className="text-6xl sm:text-8xl md:text-9xl lg:text-[12rem] xl:text-[24rem] text-orange-500 absolute -top-8 sm:-top-12 md:-top-16 lg:-top-29 -left-4 sm:-left-8 md:-left-16 lg:-left-40">&ldquo;</span>
-            <p className="text-gray-300 mt-12 sm:mt-20 md:mt-24 lg:mt-30 text-sm sm:text-base leading-relaxed relative z-10">
-              I didn't think it was possible to get my book published so quickly and easily. Kindle made the entire process seamless, from formatting to distribution. The team was incredibly supportive and professional. I'm so grateful for their expertise and dedication. My book is now available on all major platforms!
-            </p>
-            <span className="text-4xl sm:text-5xl md:text-6xl lg:text-[6rem] text-white absolute -bottom-8 sm:-bottom-12 md:-bottom-16 lg:-bottom-29 right-8 sm:right-16 md:right-32 lg:right-60">&rdquo;</span>
+        <div className="mb-10 text-left">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif mb-4 text-white">
+            Read Stories from Published Authors.
+          </h2>
+          <p className="text-gray-400 text-lg md:text-xl max-w-2xl">
+            Join a community of writers who brought their books to life with Kandle.
+          </p>
+        </div>
+
+        <div className="flex flex-col lg:flex-row items-center gap-12">
+          {/* Left testimonial content */}
+          <div className="w-full lg:w-1/2 flex flex-col justify-between min-h-[400px]">
+            <div className="relative px-4 pl-8 sm:px-8">
+              <span className="text-6xl sm:text-8xl text-orange-500 absolute -top-10 -left-2 opacity-30">“</span>
+              <div className="relative z-10">
+                <h3 className="text-xl text-orange-400 font-semibold mb-4 tracking-wide uppercase">
+                  {testimonials[currentIndex].title}
+                </h3>
+                <p className="text-gray-300 text-lg sm:text-xl leading-relaxed mb-8 italic">
+                  "{testimonials[currentIndex].content}"
+                </p>
+                <div>
+                  <p className="text-white font-bold text-lg">{testimonials[currentIndex].author}</p>
+                  <p className="text-gray-500 text-sm">{testimonials[currentIndex].role}</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 pl-8 flex items-center gap-6">
+              <div className="flex gap-3">
+                <button
+                  onClick={prevTestimonial}
+                  className="w-10 h-10 border border-gray-600 rounded-full flex items-center justify-center text-white hover:bg-orange-500 hover:border-orange-500 transition"
+                  aria-label="Previous testimonial"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={nextTestimonial}
+                  className="w-10 h-10 border border-gray-600 rounded-full flex items-center justify-center text-white hover:bg-orange-500 hover:border-orange-500 transition"
+                  aria-label="Next testimonial"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </div>
+              <Link href="/success-stories" className="text-orange-500 font-medium hover:text-white transition flex items-center gap-2 group">
+                Read More Author Success Stories <span className="group-hover:translate-x-1 transition-transform">→</span>
+              </Link>
+            </div>
           </div>
 
           {/* Right gallery */}
-          <div className="w-full lg:w-1/2 max-w-4xl h-64 sm:h-80 md:h-96 lg:h-[450px] mx-auto flex justify-center gap-2 sm:gap-3 md:gap-4 gallery overflow-hidden">
+          <div className="w-full lg:w-1/2 h-64 sm:h-80 md:h-96 lg:h-[450px] flex justify-center gap-2 sm:gap-3 md:gap-4 gallery overflow-hidden">
             {[
               { src: img1, alt: "Author 1" },
               { src: img2, alt: "Author 2" },
@@ -41,7 +115,6 @@ const TestimonialsSection = () => {
                 />
               </div>
             ))}
-            {/* Additional images for larger screens */}
             <div className="hidden md:flex gap-2 sm:gap-3 md:gap-4 flex-1">
               {[
                 { src: img4, alt: "Author 4" },
@@ -70,15 +143,6 @@ const TestimonialsSection = () => {
             flex: 2.5;
           }
         `}</style>
-
-        <div className="flex justify-center gap-3 mt-6 md:mt-8">
-          <button className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center hover:bg-orange-600 transition">
-            <ChevronLeft className="w-5 h-5" />
-          </button>
-          <button className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center hover:bg-orange-600 transition">
-            <ChevronRight className="w-5 h-5" />
-          </button>
-        </div>
       </div>
     </section>
   );
