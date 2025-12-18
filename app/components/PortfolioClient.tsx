@@ -37,7 +37,7 @@ export default function PortfolioClient() {
                 </h1>
                 <p className="text-gray-400 mb-8 text-sm sm:text-base md:text-lg max-w-2xl">
                     Explore our collection of professionally designed and published books.
-                    From bestsellers to debut novels, we've helped countless authors bring their
+                    From bestsellers to debut novels, we&apos;ve helped countless authors bring their
                     visions to life with premium quality and global reach.
                 </p>
             </section>

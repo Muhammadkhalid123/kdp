@@ -1,30 +1,33 @@
-"use client";
-import React from 'react';
+import Image from 'next/image';
 
 export default function CandleAnimation() {
-    return (
-        <>
-            <div className="w-full md:w-1/2 flex justify-center">
-                <div className="candle-container">
-                    {/* Unlit candle image */}
-                    <img
-                        src="/candle-unlit.png"
-                        className="candle-image candle-unlit"
-                        alt="Unlit candle"
-                    />
+  return (
+    <>
+      <div className="w-full md:w-1/2 flex justify-center">
+        <div className="candle-container">
+          {/* Unlit candle image */}
+          <Image
+            src="/candle-unlit.png"
+            className="candle-image candle-unlit"
+            alt="Unlit candle"
+            fill
+            priority
+          />
 
-                    {/* Lit candle image */}
-                    <img
-                        src="/candle-lit.png"
-                        className="candle-image candle-lit"
-                        alt="Lit candle"
-                    />
+          {/* Lit candle image */}
+          <Image
+            src="/candle-lit.png"
+            className="candle-image candle-lit"
+            alt="Lit candle"
+            fill
+            priority
+          />
 
-                    <div className="flame-glow"></div>
-                </div>
-            </div>
+          <div className="flame-glow"></div>
+        </div>
+      </div>
 
-            <style jsx>{`
+      <style jsx>{`
         .candle-container {
           position: relative;
           width: 100%;
@@ -100,6 +103,6 @@ export default function CandleAnimation() {
           }
         }
       `}</style>
-        </>
-    );
+    </>
+  );
 }

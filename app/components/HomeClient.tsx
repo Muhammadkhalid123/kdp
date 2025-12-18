@@ -66,7 +66,7 @@ export default function HomeClient() {
                         to Marketplace.
                     </h1>
                     <p className="text-gray-400 mb-6 sm:mb-8 text-sm sm:text-base md:text-lg max-w-md">
-                        Get expert formatting, stunning cover design, and global distribution while keeping all your rights. We're your publishing partner, handling the complexities so you can focus on your next chapter.
+                        Get expert formatting, stunning cover design, and global distribution while keeping all your rights. We&apos;re your publishing partner, handling the complexities so you can focus on your next chapter.
                     </p>
                     <Link href="/contact" className="bg-orange-500 hover:bg-orange-600 px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-medium transition text-sm sm:text-base inline-block">
                         Start Your Publishing Journey →
@@ -82,22 +82,25 @@ export default function HomeClient() {
             <section className="bg-amber-50 text-gray-900 py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 sm:gap-10 md:gap-12">
                     <div className="w-full md:w-1/2">
-                        <img
-                            src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=500&h=600&fit=crop"
-                            alt="Library"
-                            className="rounded-2xl sm:rounded-3xl w-full h-64 sm:h-80 md:h-96 object-cover shadow-lg"
-                        />
+                        <div className="relative rounded-2xl sm:rounded-3xl w-full h-64 sm:h-80 md:h-96 overflow-hidden shadow-lg">
+                            <Image
+                                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=500&h=600&fit=crop"
+                                alt="Library"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
                     </div>
                     <div className="w-full md:w-1/2">
                         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">About Kandle</h2>
                         <p className="text-gray-700 mb-3 sm:mb-4 text-sm sm:text-base">
-                            At Kandle, we bridge the gap between a finished manuscript and a successfully published book. We understand that writing is your passion—dealing with technical formatting, design software, and distribution platforms often is not. That’s where we step in.   </p>
+                            At Kandle, we bridge the gap between a finished manuscript and a successfully published book. We understand that writing is your passion—dealing with technical formatting, design software, and distribution platforms often is not. That&apos;s where we step in.   </p>
                         <p className="text-gray-700 mb-3 sm:mb-4 text-sm sm:text-base">
                             We built Kandle to be the complete publishing partner that independent authors deserve. Our mission is simple: to provide the expert services and guidance you need to publish with confidence, reach a global audience, and, most importantly, retain 100% ownership and creative control of your work.   </p>
                         <p className="text-gray-700 mb-4 sm:mb-6 text-sm sm:text-base">
-                            Our team of publishing specialists, designers, and marketers handles the complex details. From ensuring flawless ebook formatting across every device to creating custom, genre-perfect cover designs that capture readers' attention, we manage the entire production process. Then, we distribute your book globally to major retailers like Amazon, Apple Books, Barnes & Noble, and Kobo.
+                            Our team of publishing specialists, designers, and marketers handles the complex details. From ensuring flawless ebook formatting across every device to creating custom, genre-perfect cover designs that capture readers&apos; attention, we manage the entire production process. Then, we distribute your book globally to major retailers like Amazon, Apple Books, Barnes & Noble, and Kobo.
 
-                            We’re not just a service; we’re your advocate in the publishing world, committed to making professional publishing accessible and successful for every author.   </p>
+                            We&apos;re not just a service; we&apos;re your advocate in the publishing world, committed to making professional publishing accessible and successful for every author.   </p>
                         <Link href="/about" className="text-orange-500 font-medium hover:underline text-sm sm:text-base inline-block">
                             Learn More About Our Process & Team →
                         </Link>
@@ -190,7 +193,7 @@ export default function HomeClient() {
                             With Confidence
                         </h2>
                         <p className="text-gray-700 mb-6 sm:mb-8 text-sm sm:text-base">
-                            Whether you're a first-time author or a seasoned writer, our platform is designed to make ebook publishing simple, affordable, and effective. Join thousands of authors who have trusted us to bring their stories to life.
+                            Whether you&apos;re a first-time author or a seasoned writer, our platform is designed to make ebook publishing simple, affordable, and effective. Join thousands of authors who have trusted us to bring their stories to life.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                             <Link href="/contact" className="bg-orange-500 hover:bg-orange-600 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-medium transition text-sm sm:text-base inline-block text-center">
@@ -202,11 +205,14 @@ export default function HomeClient() {
                         </div>
                     </div>
                     <div className="w-full md:w-1/2">
-                        <img
-                            src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=400&h=500&fit=crop"
-                            alt="Working"
-                            className="rounded-2xl sm:rounded-3xl w-full h-64 sm:h-80 md:h-96 object-cover shadow-lg"
-                        />
+                        <div className="relative rounded-2xl sm:rounded-3xl w-full h-64 sm:h-80 md:h-96 overflow-hidden shadow-lg">
+                            <Image
+                                src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=400&h=500&fit=crop"
+                                alt="Working"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
                     </div>
                 </div>
             </section>
@@ -215,16 +221,19 @@ export default function HomeClient() {
             <section className="bg-gray-800 py-12 sm:py-16 md:py-20 px-4 sm:px-6">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row-reverse items-center gap-8 sm:gap-10 md:gap-12">
                     <div className="w-full md:w-1/2">
-                        <img
-                            src="https://images.unsplash.com/photo-1524578271613-d550eacf6090?w=400&h=500&fit=crop"
-                            alt="Coffee reading"
-                            className="rounded-2xl sm:rounded-3xl w-full h-64 sm:h-80 md:h-96 object-cover shadow-lg"
-                        />
+                        <div className="relative rounded-2xl sm:rounded-3xl w-full h-64 sm:h-80 md:h-96 overflow-hidden shadow-lg">
+                            <Image
+                                src="https://images.unsplash.com/photo-1524578271613-d550eacf6090?w=400&h=500&fit=crop"
+                                alt="Coffee reading"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
                     </div>
                     <div className="w-full md:w-1/2 p-4 sm:p-6 md:p-8 lg:p-10">
                         <h2 className="text-2xl sm:text-3xl md:text-4xl font-noto mb-4 sm:mb-6">Why Kandle?</h2>
                         <p className="text-gray-400 text-sm sm:text-base">
-                            At Kandle, we combine cutting-edge technology with personalized support to deliver an unparalleled publishing experience. Here's what sets us apart:
+                            At Kandle, we combine cutting-edge technology with personalized support to deliver an unparalleled publishing experience. Here&apos;s what sets us apart:
                         </p>
                         <hr className='mb-4 sm:mb-6 mt-4 sm:mt-6 text-gray-400' />
                         <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8 text-gray-400 text-sm sm:text-base">

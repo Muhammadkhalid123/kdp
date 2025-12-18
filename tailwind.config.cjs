@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 const plugin = require('tailwindcss/plugin');
 
 module.exports = {
@@ -18,7 +19,7 @@ module.exports = {
     }
   },
   plugins: [
-    plugin(function({ addBase }) {
+    plugin(function ({ addBase }) {
       addBase({
         'h1, h2, h3, h4, h5, h6': {
           fontFamily: '"Noto Serif Display", serif',

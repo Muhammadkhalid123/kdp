@@ -65,7 +65,7 @@ const TestimonialsSection = () => {
                   {testimonials[currentIndex].title}
                 </h3>
                 <p className="text-gray-300 text-lg sm:text-xl leading-relaxed mb-8 italic">
-                  "{testimonials[currentIndex].content}"
+                  &quot;{testimonials[currentIndex].content}&quot;
                 </p>
                 <div>
                   <p className="text-white font-bold text-lg">{testimonials[currentIndex].author}</p>

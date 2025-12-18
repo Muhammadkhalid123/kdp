@@ -151,7 +151,7 @@ export default function KandleLandingPage() {
             <div className="border-b border-gray-600 pb-8">
               <h4 className="text-xl font-semibold mb-3">Radical Transparency & Integrity</h4>
               <p className="text-gray-300 text-sm leading-relaxed">
-                No hidden fees, no unclear processes. We believe trust is built on honesty. You’ll receive straightforward pricing, clear timelines, and direct communication at every stage. We succeed only when you feel informed and confident.
+                No hidden fees, no unclear processes. We believe trust is built on honesty. You&apos;ll receive straightforward pricing, clear timelines, and direct communication at every stage. We succeed only when you feel informed and confident.
 
               </p>
             </div>

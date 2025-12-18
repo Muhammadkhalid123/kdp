@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 import Header from './Header';
 import Footer from './footer';
 import Image from 'next/image';
@@ -50,7 +49,7 @@ export default function Contact() {
         const data = await response.json();
         setError(data.error || 'Something went wrong. Please try again.');
       }
-    } catch (err) {
+    } catch {
       setError('Failed to send message. Please check your connection.');
     } finally {
       setIsSubmitting(false);
@@ -95,7 +94,7 @@ export default function Contact() {
                     Fill In Your Details
                   </h2>
                   <p className="text-xl sm:text-2xl font-serif text-gray-700 mb-8">
-                    We'll Contact You Soon.
+                    We&apos;ll Contact You Soon.
                   </p>
 
                   <form className="space-y-6" onSubmit={handleSubmit}>
@@ -147,7 +146,7 @@ export default function Contact() {
 
                     {submitted && (
                       <div className="p-4 bg-green-50 border border-green-200 rounded-lg text-green-700">
-                        Thank you! We'll contact you soon.
+                        Thank you! We&apos;ll contact you soon.
                       </div>
                     )}
                     {error && (

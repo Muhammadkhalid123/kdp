@@ -3,9 +3,6 @@ import React from 'react';
 import Image from 'next/image';
 import Header from './Header';
 import Footer from './footer';
-import { Book, FileText, TrendingUp, Mic, Edit, Pen } from 'lucide-react';
-import Link from 'next/link';
-
 
 export default function Services() {
   return (
@@ -85,15 +82,15 @@ export default function Services() {
 
           <div className="text-gray-700 space-y-4">
             <p>
-              At Kandle, we don't just publish books — we build authors.
+              At Kandle, we don&apos;t just publish books — we build authors.
             </p>
 
             <p>
-              Whether you're a first-time writer or a seasoned storyteller, our team guides you through every step of the journey with care, creativity, and professionalism.
+              Whether you&apos;re a first-time writer or a seasoned storyteller, our team guides you through every step of the journey with care, creativity, and professionalism.
             </p>
 
             <p>
-              We combine world-class design, editorial excellence, and proven marketing strategies to help your book shine — on shelves, on screens, and in readers' hands.
+              We combine world-class design, editorial excellence, and proven marketing strategies to help your book shine — on shelves, on screens, and in readers&apos; hands.
             </p>
 
             <p className="font-semibold">At Kandle, your words matter.</p>
