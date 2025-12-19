@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://kandledirectpublishing.com'),
+  metadataBase: new URL('https://www.kandledirectpublishing.com'),
   title: {
     default: 'Kandle Direct Publishing - Professional Ebook Publishing Services',
     template: '%s | Kandle Direct Publishing'
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://kandledirectpublishing.com',
+    url: 'https://www.kandledirectpublishing.com',
     siteName: 'Kandle Direct Publishing',
     title: 'Kandle Direct Publishing - Professional Ebook Publishing Services',
     description: 'Transform your manuscript into a bestselling ebook with professional formatting, cover design, and marketing services. Your story deserves to be published.',
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: '4yrj_u-zJEKGy3e_DXO10SQ_hvAOfdc36htSzdS2KjY',
   },
 };
 

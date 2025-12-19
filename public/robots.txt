@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://kandledirectpublishing.com/sitemap.xml
+Sitemap: https://www.kandledirectpublishing.com/sitemap.xml
