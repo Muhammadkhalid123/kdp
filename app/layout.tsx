@@ -81,6 +81,15 @@ export const metadata: Metadata = {
   verification: {
     google: '4yrj_u-zJEKGy3e_DXO10SQ_hvAOfdc36htSzdS2KjY',
   },
+  alternates: {
+    canonical: '/',
+  },
+  other: {
+    "geo.region": "GB",
+    "geo.placename": "Luton",
+    "geo.position": "51.88;-0.44",
+    "ICBM": "51.88, -0.44"
+  },
 };
 
 export default function RootLayout({
@@ -93,6 +102,36 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Kandle Direct Publishing",
+              "url": "https://www.kandledirectpublishing.com/",
+              "logo": "https://www.kandledirectpublishing.com/wp-content/uploads/logo.png",
+              "description": "Kandle Direct Publishing is a UK-based professional book publishing company offering editing, formatting, Amazon KDP optimization, and author marketing services worldwide.",
+              "telephone": "+44 7922 656521",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "173 Dallow Rd",
+                "addressLocality": "Luton",
+                "postalCode": "LU1 1NX",
+                "addressCountry": "GB"
+              },
+              "areaServed": {
+                "@type": "Place",
+                "name": "United Kingdom"
+              },
+              "sameAs": [
+                "https://www.facebook.com/kandledirectpublishing/",
+                "https://www.linkedin.com/company/kandle-direct-publishing/",
+                "https://www.instagram.com/kandledirectpublishing/"
+              ]
+            })
+          }}
+        />
         {children}
       </body>
     </html>
